@@ -2,7 +2,7 @@
 
 The self-hosted runners can be used in the same way as the GitHub provided runners.
 
-Define a workflow file in the “.github/workflows/” folder in your repository (needs to be under the canonical organisation):
+Define a workflow file in the `.github/workflows/` folder in your repository (needs to be under the Canonical organisation):
 
 ```
 
@@ -25,4 +25,4 @@ jobs:
 ```
 
 This workflow would trigger two jobs, where the first job would run on a large runner using jammy as OS, and the second one using an xlarge runner on noble.
-See [Available Runners](/usage/available_runners) for the available runners.
+See {ref}`available_runners` for the available runners.

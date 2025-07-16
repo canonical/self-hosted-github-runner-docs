@@ -1,5 +1,5 @@
-Usage of Self-Hosted GitHub Actions Runners
-============================================
+Usage of self-hosted GitHub Actions runners
+===========================================
 
 This section provides an overview of how to use self-hosted GitHub Actions runners at Canonical.
 
@@ -8,7 +8,7 @@ This section provides an overview of how to use self-hosted GitHub Actions runne
 **for our public repositories. See more use-cases in** :doc:`When to Use Self-Hosted Runners </usage/usecases>`.
 
 
-The GitHub self-hosted runners are available on all GitHub repositories within the canonical organization: `https://github.com/canonical <https://github.com/canonical>`_.
+The GitHub self-hosted runners are available on all GitHub repositories within the Canonical organization: `https://github.com/canonical <https://github.com/canonical>`_.
 Define a workflow file in the “.github/workflows/” folder in that repository. Here is a quickstart guide for GitHub actions: `https://docs.github.com/en/actions/quickstart <https://docs.github.com/en/actions/quickstart>`_.
 
 

@@ -1,8 +1,6 @@
-# Available Runners
+# Available runners
 
-Currently,
-
- the following flavors have been deployed:
+Currently, the following flavors have been deployed:
 
 * 4 CPU and 16 GiB memory with 50 GiB disk labeled as “medium”  
 * 8 CPU and 32 GiB of memory with 50 GiB of disk labeled as “large”  
@@ -69,6 +67,6 @@ Note that this list includes private endpoint runners and TIOBE runners (you see
 
 Please refer to the [private-endpoint runners usage guide](https://docs.google.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/edit?tab=t.0#heading=h.pgq3j0bim79s).
 
-## TIOBE Runners
+## TIOBE runners
 
 These are runners that come with pre-installed software to perform the TIOBE scan faster. Please refer to [SEC0024- SSDLC - Static Code Analysis](https://docs.google.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/edit?tab=t.0#heading=h.uww97wqcz7zi).
