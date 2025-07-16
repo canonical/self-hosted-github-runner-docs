@@ -1,3 +1,4 @@
+(when_to_use_runners)=
 # When to use self-hosted runners
 
 We have an enterprise subscription that provides 500 free concurrent GitHub-hosted runners on our public repositories. You should try these first. If they don't work for your use case, using self-hosted runners is the way to go.
