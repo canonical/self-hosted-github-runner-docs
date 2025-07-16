@@ -2,11 +2,11 @@
 
 Currently, the following flavors have been deployed:
 
-* 4 CPU and 16 GiB memory with 50 GiB disk labeled as “medium”  
-* 8 CPU and 32 GiB of memory with 50 GiB of disk labeled as “large”  
-* 16 CPU and 64 GiB of memory with 100 GiB of disk labeled “xlarge”  
-* 32 CPU and 128 GiB of memory with 100 GiB of disk labeled “2xlarge”  
-* 32 CPU and 128 GiB of memory with 500 GiB of disk labeled “2xlarge-extra”
+* 4 CPU and 16 GiB memory with 50 GiB disk labeled as `medium`  
+* 8 CPU and 32 GiB of memory with 50 GiB of disk labeled as `large`  
+* 16 CPU and 64 GiB of memory with 100 GiB of disk labeled `xlarge`  
+* 32 CPU and 128 GiB of memory with 100 GiB of disk labeled `2xlarge`  
+* 32 CPU and 128 GiB of memory with 500 GiB of disk labeled `2xlarge-extra`
 
 The following architectures are supported:
 
