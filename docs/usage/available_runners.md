@@ -60,7 +60,7 @@ The following is a list of runners currently available:
 | ppc64el | jammy | medium | self-hosted-linux-ppc64el-noble-edge                  |  |
 | s390x   | jammy | medium | self-hosted-linux-s390x-noble-edge                    |  |
 
-Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to [Private endpoint runners](#private-endpoint-runners) and [TIOBE Runners](#tiobe-runners) in order to understand when to use those.
+Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to the **Private endpoint runners** and **TIOBE Runners** section in order to understand when to use those.
 
 
 ## Private endpoint runners
