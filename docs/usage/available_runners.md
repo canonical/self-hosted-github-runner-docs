@@ -65,10 +65,10 @@ The following is a list of runners currently available:
 Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to [Private endpoint runners](#private-endpoint-runners) and [TIOBE Runners](#tiobe-runners) in order to understand when to use those.
 
 
-### Private endpoint runners
+## Private endpoint runners
 
 Please refer to the [private-endpoint runners usage guide](https://docs.google.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/edit?tab=t.0#heading=h.pgq3j0bim79s).
 
-### TIOBE Runners
+## TIOBE Runners
 
 These are runners that come with pre-installed software to perform the TIOBE scan faster. Please refer to [SEC0024- SSDLC - Static Code Analysis](https://docs.google.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/edit?tab=t.0#heading=h.uww97wqcz7zi).
