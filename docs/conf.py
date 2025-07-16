@@ -221,8 +221,8 @@ redirects = {}
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
     "https://github.com/canonical/ACME/*",
-    "https://docs.google.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/edit?tab=t.0#heading=h.pgq3j0bim79s",
-    "https://docs.google.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/edit?tab=t.0#heading=h.uww97wqcz7zi"
+    r"https://docs\.google\.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/.*",
+    r"https://docs\.google\.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/.*"
     ]
 
 
