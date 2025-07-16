@@ -5,9 +5,8 @@ This documentation provides an overview of how to set up and use self-hosted Git
 
 
 .. toctree::
-   :hidden:
    :maxdepth: 3
 
    Self-Hosted GitHub Actions Runners <self>
-   Usage <usage/index>
+   Usage </usage/index>
 
