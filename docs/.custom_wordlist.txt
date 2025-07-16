@@ -63,6 +63,9 @@ el
 Exercism
 fbff
 fileshare
+flavor
+flavors
+FLAVOR
 freeform
 FW
 gh
