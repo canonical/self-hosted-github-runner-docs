@@ -348,3 +348,6 @@ if os.path.exists('./reuse/substitutions.yaml'):
 intersphinx_mapping = {
     'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
+
+spelling_exclude_patterns=['available_runners*']
+

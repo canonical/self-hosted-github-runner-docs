@@ -12,10 +12,10 @@ Currently,
 
 The following architectures are supported:
 
-* ARM64  
-* AMD64 (GitHub uses the label X64)  
-* S390x (**experimental, may be removed anytime**)  
-* PPC64EL  (**experimental, may be removed anytime**)
+* `ARM64`
+* `AMD64` (GitHub uses the label X64)  
+* `S390x` (**experimental, may be removed anytime**)  
+* `PPC64EL` (**experimental, may be removed anytime**)
 
 The following base images are supported:
 
@@ -33,34 +33,34 @@ would give you a large runner with base jammy on amd64. Every runner also has a 
 
 The following is a list of runners currently available:
 
-| ARCH | BASE-IMAGE | FLAVOR | SINGLE-LABEL | ADDITIONAL\_LABELS |
-| :---- | :---- | :---- | :---- | :---- |
-| amd64 | focal | large | self-hosted-linux-amd64-focal-large |  |
-| amd64 | jammy | large | self-hosted-linux-amd64-jammy-large |  |
-| amd64 | jammy | large | self-hosted-linux-amd64-jammy-large-tiobe | large-tiobe |
-| amd64 | focal | medium | self-hosted-linux-amd64-focal-medium |  |
-| amd64 | jammy | medium | self-hosted-linux-amd64-jammy-private-endpoint-medium |  |
-| amd64 | jammy | medium | self-hosted-linux-amd64-jammy-medium |  |
-| amd64 | jammy | medium | self-hosted-linux-amd64-jammy-edge | edge |
-| amd64 | jammy | medium | self-hosted-linux-amd64-jammy-tiobe | tiobe |
-| amd64 | jammy | xlarge | self-hosted-linux-amd64-jammy-xlarge |  |
-| amd64 | noble | 2xlarge | self-hosted-linux-amd64-noble-2xlarge |  |
-| amd64 | noble | 2xlarge | self-hosted-linux-amd64-noble-2xlarge-tiobe | 2xlarge-tiobe |
-| amd64 | noble | 2xlarge-extra | self-hosted-linux-amd64-noble-2xlarge-extra |  |
-| amd64 | noble | large | self-hosted-linux-amd64-noble-large |  |
-| amd64 | noble | large | self-hosted-linux-amd64-noble-large-tiobe | large-tiobe |
-| amd64 | noble | medium | self-hosted-linux-amd64-noble-medium |  |
-| amd64 | noble | medium | self-hosted-linux-amd64-noble-tiobe | tiobe |
-| amd64 | noble | xlarge | self-hosted-linux-amd64-noble-xlarge |  |
-| arm64 | jammy | large | self-hosted-linux-arm64-jammy-large |  |
-| arm64 | jammy | medium | self-hosted-linux-arm64-jammy-medium |  |
-| arm64 | noble | medium | self-hosted-linux-arm64-noble-edge | edge |
-| arm64 | jammy | xlarge | self-hosted-linux-arm64-jammy-xlarge |  |
-| arm64 | noble | large | self-hosted-linux-arm64-noble-large |  |
-| arm64 | noble | medium | self-hosted-linux-arm64-noble-medium |  |
-| arm64 | noble | xlarge | self-hosted-linux-amd64-noble-xlarge |  |
-| ppc64el | jammy | medium | self-hosted-linux-ppc64el-noble-edge |  |
-| s390x | jammy | medium | self-hosted-linux-s390x-noble-edge |  |
+| ARCH    | BASE-IMAGE | FLAVOR | SINGLE-LABEL                                          | ADDITIONAL\_LABELS |
+|:--------| :---- | :---- |:------------------------------------------------------| :---- |
+| amd64   | focal | large | self-hosted-linux-amd64-focal-large                   |  |
+| amd64   | jammy | large | self-hosted-linux-amd64-jammy-large                   |  |
+| amd64   | jammy | large | self-hosted-linux-amd64-jammy-large-tiobe             | large-tiobe |
+| amd64   | focal | medium | self-hosted-linux-amd64-focal-medium                  |  |
+| amd64   | jammy | medium | self-hosted-linux-amd64-jammy-private-endpoint-medium |  |
+| amd64   | jammy | medium | self-hosted-linux-amd64-jammy-medium                  |  |
+| amd64   | jammy | medium | self-hosted-linux-amd64-jammy-edge                    | edge |
+| amd64   | jammy | medium | self-hosted-linux-amd64-jammy-tiobe                   | tiobe |
+| amd64   | jammy | xlarge | self-hosted-linux-amd64-jammy-xlarge                  |  |
+| amd64   | noble | 2xlarge | self-hosted-linux-amd64-noble-2xlarge                 |  |
+| amd64   | noble | 2xlarge | self-hosted-linux-amd64-noble-2xlarge-tiobe           | 2xlarge-tiobe |
+| amd64   | noble | 2xlarge-extra | self-hosted-linux-amd64-noble-2xlarge-extra           |  |
+| amd64   | noble | large | self-hosted-linux-amd64-noble-large                   |  |
+| amd64   | noble | large | self-hosted-linux-amd64-noble-large-tiobe             | large-tiobe |
+| amd64   | noble | medium | self-hosted-linux-amd64-noble-medium                  |  |
+| amd64   | noble | medium | self-hosted-linux-amd64-noble-tiobe                   | tiobe |
+| amd64   | noble | xlarge | self-hosted-linux-amd64-noble-xlarge                  |  |
+| arm64   | jammy | large | self-hosted-linux-arm64-jammy-large                   |  |
+| arm64   | jammy | medium | self-hosted-linux-arm64-jammy-medium                  |  |
+| arm64   | noble | medium | self-hosted-linux-arm64-noble-edge                    | edge |
+| arm64   | jammy | xlarge | self-hosted-linux-arm64-jammy-xlarge                  |  |
+| arm64   | noble | large | self-hosted-linux-arm64-noble-large                   |  |
+| arm64   | noble | medium | self-hosted-linux-arm64-noble-medium                  |  |
+| arm64   | noble | xlarge | self-hosted-linux-amd64-noble-xlarge                  |  |
+| ppc64el | jammy | medium | self-hosted-linux-ppc64el-noble-edge                  |  |
+| s390x   | jammy | medium | self-hosted-linux-s390x-noble-edge                    |  |
 
 Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to [Private endpoint runners](#private-endpoint-runners) and [TIOBE Runners](#tiobe-runners) in order to understand when to use those.
 
