@@ -220,7 +220,9 @@ redirects = {}
 
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://github.com/canonical/ACME/*"
+    "https://github.com/canonical/ACME/*",
+    r"https://docs\.google\.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/.*",
+    r"https://docs\.google\.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/.*"
     ]
 
 
@@ -243,6 +245,7 @@ linkcheck_retries = 3
 #       substitution, deflist, linkify
 
 # myst_enable_extensions = set()
+myst_heading_anchors = 3
 
 
 # Custom Sphinx extensions; see
@@ -287,12 +290,6 @@ exclude_patterns = [
 # html_js_files = []
 
 
-# Specifies a reST snippet to be appended to each .rst file
-
-rst_epilog = """
-.. include:: /reuse/links.txt
-.. include:: /reuse/substitutions.txt
-"""
 
 # Feedback button at the top; enabled by default
 #
@@ -345,3 +342,6 @@ if os.path.exists('./reuse/substitutions.yaml'):
 intersphinx_mapping = {
     'starter-pack': ('https://canonical-example-product-documentation.readthedocs-hosted.com/en/latest', None)
 }
+
+spelling_exclude_patterns=['available_runners*']
+
