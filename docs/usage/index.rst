@@ -17,4 +17,4 @@ Define a workflow file in the “.github/workflows/” folder in that repository
     Available Runners </usage/available_runners>
     Example </usage/example>
     When to Use Self-Hosted Runners </usage/usecases>
-    FAQ </usage/faq>
+    FAQ </usage/faq/index>
