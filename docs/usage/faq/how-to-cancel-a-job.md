@@ -1,4 +1,4 @@
-# How to cancel a job?
+# How can I cancel a job?
 
 You can try through the web interface first.
 
