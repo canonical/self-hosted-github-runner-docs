@@ -85,5 +85,5 @@ Resources for private-endpoint runners are very limited. Furthermore, since it a
 
 **Do not** use the private-endpoint runners:
 
-* To test arm64 architectures (use ARM64 runners for that)  
+* To test ARM64 architectures (use ARM64 runners for that)  
 * To run whatever can be run with regular self-hosted runners
