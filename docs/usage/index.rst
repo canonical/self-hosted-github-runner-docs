@@ -12,9 +12,10 @@ Define a workflow file in the “.github/workflows/” folder in that repository
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
     Available Runners </usage/available_runners>
     Example </usage/example>
     When to Use Self-Hosted Runners </usage/usecases>
+    Private Endpoint Runners </usage/private_endpoint_runners>
     FAQ </usage/faq>
