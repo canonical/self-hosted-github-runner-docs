@@ -10,7 +10,7 @@ The following will be required to start using the private-endpoint runners. Each
 * Repository rules  
 * Do’s and Don’ts
 
-# Firewall
+## Firewall
 
 To start allowing traffic from the self-hosted private-endpoint GitHub runners to your desired service within Canonical, please set up firewall rules accordingly at [https://code.launchpad.net/canonical-is-firewalls/](https://code.launchpad.net/canonical-is-firewalls/) . Note that granting access here means **anyone in Canonical using the private-endpoint runners will gain access** accordingly.  
 The private-endpoint runner service is defined under `services/is/github-runner.yaml production-private-endpoint-runners`.
@@ -65,17 +65,17 @@ For the list of flavors available, please refer to the [GitHub runner usage guid
 
 [Full PR example](https://github.com/canonical/github-runner-operator/pull/163) including GitHub workflow.
 
-# GitHub secrets
+## GitHub secrets
 
 In order to pass sensitive credentials to access your internal endpoints (e.g. OpenStack project credentials), please use the GitHub secrets and pass them to your workflow.  
 Refer to the official [GitHub secrets guide](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions).  
 Please note that GitHub workflow may leak secrets and the workflow should be manually confirmed that no secrets are leaked.
 
-# Repository rules
+## Repository rules
 
 The private endpoint runners will disallow any external contributors from running the workflow. This means that any jobs submitted from a fork of an external contributor will be disallowed.
 
-# Do’s and Don’ts
+## Do’s and Don’ts
 
 Resources for private-endpoint runners are very limited. Furthermore, since it allows access to Canonical’s internal infrastructure, the usage comes with a lot of risks.  
 **Do** use the private-endpoint runners:
@@ -86,9 +86,3 @@ Resources for private-endpoint runners are very limited. Furthermore, since it a
 
 * To test arm64 architectures (use ARM64 runners for that)  
 * To run whatever can be run with regular self-hosted runners
-
-# Help
-
-Please don’t hesitate to reach out to the dedicated [GitHub Actions self hosted runner channel](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners) or [Platform Engineering channel](https://chat.canonical.com/canonical/channels/platform-engineering) on Mattermost.
-
-Happy GitHubbing\!
