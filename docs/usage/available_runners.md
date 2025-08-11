@@ -64,9 +64,9 @@ The following is a list of runners currently available:
 Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to the **Private endpoint runners** and **TIOBE Runners** section in order to understand when to use those.
 
 
-## Private endpoint runners
+## Private Endpoint runners
 
-Please refer to the [private-endpoint runners usage guide](https://docs.google.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/edit?tab=t.0#heading=h.pgq3j0bim79s).
+Please refer to the {ref}`private_endpoint_runners`.
 
 ## TIOBE runners
 
