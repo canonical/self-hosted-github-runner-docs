@@ -16,7 +16,7 @@ The following will be required to start using the private-endpoint runners. Each
 To start allowing traffic from the self-hosted private-endpoint GitHub runners to your desired service within Canonical, please set up firewall rules accordingly at [https://code.launchpad.net/canonical-is-firewalls/](https://code.launchpad.net/canonical-is-firewalls/) . Note that granting access here means **anyone in Canonical using the private-endpoint runners will gain access** accordingly.  
 The private-endpoint runner service is defined under `services/is/github-runner.yaml production-private-endpoint-runners`.
 
-Example: Access PS6 OpenStack KeyStone
+Example: Access PS6 OpenStack Keystone
 
 ```
 # rules/is/ps6.yaml
