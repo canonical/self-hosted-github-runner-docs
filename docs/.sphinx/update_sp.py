@@ -113,7 +113,7 @@ def main():
 
             new_requirements = requirements - local_reqs
 
-            for req in requirements - local_reqs:
+            for req in new_requirements:
                 logging.debug(f"{req} not found in local requirements.txt")
 
             for req in requirements & local_reqs:
@@ -121,7 +121,7 @@ def main():
 
             if new_requirements != set():
                 print(
-                    "You may need to add the following pacakges to your requirements.txt file:"
+                    "You may need to add the following packages to your requirements.txt file:"
                 )
                 for r in new_requirements:
                     print(f"{r}\n")
