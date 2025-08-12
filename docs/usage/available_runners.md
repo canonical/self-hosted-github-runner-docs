@@ -1,4 +1,5 @@
 (available_runners)=
+
 # Available runners
 
 Currently, the following flavors have been deployed:
@@ -62,7 +63,6 @@ The following is a list of runners currently available:
 | s390x   | jammy | medium | self-hosted-linux-s390x-noble-edge                    |  |
 
 Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to the **Private endpoint runners** and **TIOBE Runners** section in order to understand when to use those.
-
 
 ## Private endpoint runners
 
