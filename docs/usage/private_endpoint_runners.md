@@ -77,7 +77,7 @@ Please note that GitHub workflow may leak secrets and the workflow should be man
 
 The private endpoint runners will disallow any external contributors from running the workflow. This means that any jobs submitted from a fork of an external contributor will be disallowed.
 
-## Do’s and Don’ts
+## Do’s and don’ts
 
 Resources for private-endpoint runners are very limited. Furthermore, since it allows access to Canonical’s internal infrastructure, the usage comes with a lot of risks.  
 **Do** use the private-endpoint runners:
