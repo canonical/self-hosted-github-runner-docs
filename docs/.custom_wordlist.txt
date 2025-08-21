@@ -22,6 +22,7 @@ Bitwarden
 Bootstack
 bootstrap
 braindump
+Canonical's
 Canonistack
 changelog
 charmhub
@@ -56,6 +57,7 @@ DockerHub
 dockerhub
 docstring
 docstrings
+Don'ts
 DR
 EMEA
 EOD

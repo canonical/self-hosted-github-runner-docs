@@ -222,7 +222,8 @@ linkcheck_ignore = [
     "http://127.0.0.1:8000",
     "https://github.com/canonical/ACME/*",
     r"https://docs\.google\.com/document/d/16tAeCLcFEy9UeR3GzS32k8P4ttrsFA5Apg3nVdFLN9w/.*",
-    r"https://docs\.google\.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/.*"
+    r"https://docs\.google\.com/document/d/1PRi8F-8IAPCtESDB_qN9HGyvq5t4tHFdJkG8Bu7WRak/.*",
+    "https://code.launchpad.net/canonical-is-firewalls/" # requires auth
     ]
 
 
