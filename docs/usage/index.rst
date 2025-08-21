@@ -18,4 +18,4 @@ Define a workflow file in the “.github/workflows/” folder in that repository
     Example </usage/example>
     When to Use Self-Hosted Runners </usage/usecases>
     Private Endpoint Runners </usage/private_endpoint_runners>
-    FAQ </usage/faq>
+    FAQ </usage/faq/index>
