@@ -5,5 +5,5 @@ and our infrastructure is not supporting those.
 
 This may change in the future, because the ARM servers in ProdStack 8 may allow nested virtualization.
 
-Note that [GitHub also provides ARM runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories), which may support nested virtualization at
-a specific time.
+Note that [GitHub also provides ARM runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories),
+which may already support nested virtualization.
