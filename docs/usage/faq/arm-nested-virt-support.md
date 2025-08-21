@@ -1,7 +1,7 @@
 # Can I use nested virtualization on ARM64 runners?
 
 Unfortunately not. Nested virtualization for ARM64 is only available from `Armv8.3-A`,
-and our infrastructure is not supporting those.
+and our infrastructure does not support those.
 
 This may change in the future, because the ARM servers in ProdStack 8 may allow nested virtualization.
 
