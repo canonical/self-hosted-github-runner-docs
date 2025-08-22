@@ -14,6 +14,7 @@ argv
 ASC
 assignees
 auth
+ARM
 AWS
 Babenko
 backend
@@ -22,6 +23,7 @@ Bitwarden
 Bootstack
 bootstrap
 braindump
+Canonical
 Canonical's
 Canonistack
 changelog
