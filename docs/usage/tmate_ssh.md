@@ -1,4 +1,4 @@
-# SSH into the self-hosted runner and debug with tmate
+# SSH into the self-hosted runner with tmate
 
 This guide covers how to setup [Canonical fork of tmate action workflow](https://github.com/canonical/action-tmate) with Canonical's organisation wide self-hosted runners.
 The aim is to able to SSH into the self-hosted runner and perform manual debug within the self-hosted runner.
@@ -20,7 +20,7 @@ The process is split into the following steps:
 ## 1. Connect to the Canonical VPN
 
 The Tmate SSH server is hosted on Canonical server. VPN is needed to access it to SSH into the runner.
-For instructions on how to connect to Canonical VPN, please read [IS How to: Company Open VPN](https://wiki.canonical.com/InformationInfrastructure/IS/HowTo/CompanyOpenVPN).
+For instructions on how to connect to Canonical VPN, please read [Using our VPN](https://library.canonical.com/information-services-&-resources/using-our-vpn).
 
 ## 2. Setup GitHub SSH keys
 
