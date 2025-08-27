@@ -6,7 +6,7 @@ The aim is to be able to SSH into the self-hosted runner and perform manual debu
 ## How it works
 
 The [tmate-ssh-server charm](https://charmhub.io/tmate-ssh-server) can be integrated with the [GitHub runner charm](https://charmhub.io/github-runner).
-Once integrated, running the canonical/action-tmate workflow in the runner would setup a connection to the tmate server from the self-hosted runner host. Under the hood, it uses the following environment variables to setup a secure SSH connection: `TMATE_SERVER_HOST`, `TMATE_SERVER_PORT`, `TMATE_SERVER_RSA_FINGERPRINT`, `TMATE_SERVER_ED25519_FINGERPRINT`.
+Once integrated, running the `canonical/action-tmate` workflow in the runner would setup a connection to the tmate server from the self-hosted runner host. Under the hood, it uses the following environment variables to setup a secure SSH connection: `TMATE_SERVER_HOST`, `TMATE_SERVER_PORT`, `TMATE_SERVER_RSA_FINGERPRINT`, `TMATE_SERVER_ED25519_FINGERPRINT`.
 Since the tmate-ssh-server charm is hosted on Canonical servers, you must connect to the Canonical VPN to access it.
 
 ## Steps
@@ -19,7 +19,7 @@ The process is split into the following steps:
 
 ## 1. Connect to the Canonical VPN
 
-The Tmate SSH server is hosted on Canonical server. VPN is needed to access it to SSH into the runner.
+The tmate SSH server is hosted on Canonical server. VPN is needed to access it to SSH into the runner.
 For instructions on how to connect to Canonical VPN, please read [Using our VPN](https://library.canonical.com/information-services-&-resources/using-our-vpn).
 
 ## 2. Set up GitHub SSH keys
@@ -27,7 +27,7 @@ For instructions on how to connect to Canonical VPN, please read [Using our VPN]
 The workflow will set up SSH session to use the SSH keys registered on GitHub under your account.
 To add SSH keys to your GitHub account, please see [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-## 3. Use the canonical/action-tmate workflow
+## 3. Use the `canonical/action-tmate` workflow
 
 The [`canonical/action-tmate`](https://github.com/canonical/action-tmate) workflow will set up everything needed for the SSH session.
 
