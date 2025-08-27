@@ -18,4 +18,5 @@ Define a workflow file in the “.github/workflows/” folder in that repository
     Example </usage/example>
     When to Use Self-Hosted Runners </usage/usecases>
     Private Endpoint Runners </usage/private_endpoint_runners>
+    SSH into the self-hosted runner with tmate </usage/tmate_ssh>
     FAQ </usage/faq/index>
