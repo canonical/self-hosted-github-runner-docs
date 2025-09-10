@@ -59,8 +59,7 @@ The following is a list of runners currently available:
 | arm64   | noble | large | self-hosted-linux-arm64-noble-large                   |  |
 | arm64   | noble | medium | self-hosted-linux-arm64-noble-medium                  |  |
 | arm64   | noble | xlarge | self-hosted-linux-amd64-noble-xlarge                  |  |
-| ppc64el | jammy | medium | self-hosted-linux-ppc64el-noble-edge                  |  |
-| s390x   | jammy | medium | self-hosted-linux-s390x-noble-edge                    |  |
+| s390x   | noble | medium | self-hosted-linux-s390x-noble-edge                    | edge |
 
 Note that this list includes private endpoint runners and TIOBE runners (you see the additional label). Please refer to the **Private endpoint runners** and **TIOBE Runners** section in order to understand when to use those.
 
