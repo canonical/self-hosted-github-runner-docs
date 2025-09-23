@@ -4,7 +4,7 @@
 To get help, the best place is to ask questions in our [Mattermost channel and header](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners).
 
 We have limited capacity to troubleshoot issues in your workflows. Therefore, if you need assistance,
-we assume that
+please:
 
 - you have read the [Mattermost channel and header](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners) for current active issues
 - you have tried troubleshooting using {ref}`tmate_ssh` first

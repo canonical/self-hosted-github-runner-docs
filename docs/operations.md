@@ -6,16 +6,16 @@ This section provides an overview of how the runners are operated.
 
 ## Who
 
-The self-hosted runners are currently operated by the [Platform Engineering Team](https://library.canonical.com/our-organisation/information-systems/platform-engineering). We don't have 
-special permissions to access the underlying infrastructure, which means that we need to reach out to IS
-in cases of infrastructure issues. Have a look at [Data Center Responsibilities](https://canonical-information-systems-documentation.readthedocs-hosted.com/en/latest/reference/data-center-roles-and-responsibilities/)
+The self-hosted runners are currently operated by the [Platform Engineering Team](https://library.canonical.com/our-organisation/information-systems/platform-engineering). Platform Engineering doesn't have 
+special permissions to access the underlying infrastructure, which means that infrastructure issues must be escalated to IS.
+Have a look at [Data Center Responsibilities](https://canonical-information-systems-documentation.readthedocs-hosted.com/en/latest/reference/data-center-roles-and-responsibilities/)
 to learn more about the responsibilities in operating the datacenters.
 
 ## How
 
 We are operating using [juju](https://juju.is/) and deploying charms on the machine and k8s substrate. We are highly 
 dependent on an operational underlying k8s cluster and OpenStack cloud.
-We have basic alerts for the most common issues we are anticipating.
+We have alerts for the most common issues we are anticipating.
 
 ## Coverage
 
