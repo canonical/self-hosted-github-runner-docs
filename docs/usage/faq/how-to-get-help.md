@@ -1,4 +1,5 @@
 (how_to_get_help)=
+
 # How to get help
 
 To get help, the best place is to ask questions in our [Mattermost channel](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners).
