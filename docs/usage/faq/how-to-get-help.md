@@ -1,7 +1,7 @@
 (how_to_get_help)=
 # How to get help
 
-To get help, the best place is to ask questions in our [Mattermost channel and header](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners).
+To get help, the best place is to ask questions in our [Mattermost channel](https://chat.canonical.com/canonical/channels/github-actions-self-hosted-runners).
 
 We have limited capacity to troubleshoot issues in your workflows. Therefore, if you need assistance,
 please:
