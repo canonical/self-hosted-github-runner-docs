@@ -73,7 +73,7 @@ For this workflow, the SSH command would be `ssh -p 10022 Nuw8ED2ymQsP6TcZ7LzXFD
 
 ## Optional: Use the `canonical/action-tmate` workflow
 
-To use SSH into the runners without having to block the workflow, use the action-tmate in detached
+To use SSH into the runners without having to block the workflow, use `action-tmate` in detached
 mode.
 
 ```yaml
