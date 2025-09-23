@@ -8,7 +8,8 @@ This section provides an overview of how the runners are operated.
 
 The self-hosted runners are currently operated by the [Platform Engineering Team](https://library.canonical.com/our-organisation/information-systems/platform-engineering). We don't have 
 special permissions to access the underlying infrastructure, which means that we need to reach out to IS
-in cases of infrastructure issues.
+in cases of infrastructure issues. Have a look at [Data Center Responsibilities](https://canonical-information-systems-documentation.readthedocs-hosted.com/en/latest/reference/data-center-roles-and-responsibilities/)
+to learn more about the responsibilities in operating the datacenters.
 
 ## How
 
