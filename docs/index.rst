@@ -9,4 +9,5 @@ This documentation provides an overview of how to set up and use self-hosted Git
 
    Self-Hosted GitHub Actions Runners <self>
    Usage </usage/index>
+   Operations </operations>
 
