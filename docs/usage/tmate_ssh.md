@@ -70,3 +70,28 @@ or: ssh -i <path-to-private-SSH-key> -p10022 Nuw8ED2ymQsP6TcZ7LzXFDr8F@10.163.21
 ```
 
 For this workflow, the SSH command would be `ssh -p 10022 Nuw8ED2ymQsP6TcZ7LzXFDr8F@10.163.212.179`.
+
+## Optional: Use the `canonical/action-tmate` workflow
+
+To use SSH into the runners without having to block the workflow, use `action-tmate` in detached
+mode.
+
+```yaml
+name: Canonical action-tmate test
+    
+on: [pull_request]
+    
+jobs:
+  build:
+    runs-on: [self-hosted, linux, X64, jammy, large]
+    steps:
+    - name: Setup tmate session
+      uses: canonical/action-tmate@main
+      with:
+        detached: true
+```
+
+## Further information
+
+For further usage of the `action-tmate`, refer to the
+[documentation](https://github.com/canonical/action-tmate).
