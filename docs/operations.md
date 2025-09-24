@@ -13,8 +13,8 @@ to learn more about the responsibilities in operating the datacenters.
 
 ## How
 
-We are operating using [juju](https://juju.is/) and deploying charms on the machine and k8s substrate. We are highly 
-dependent on an operational underlying k8s cluster and OpenStack cloud.
+We are operating using [Juju](https://juju.is/) and deploying charms on the machine and K8s substrate. We are highly 
+dependent on an operational underlying K8s cluster and OpenStack cloud.
 We have alerts for the most common issues we are anticipating.
 
 ## Coverage
@@ -23,7 +23,7 @@ The service is operated in a best effort way. There is no SLA defined and the se
 explicitly not covered 
 
 - on weekends
-- during Americas timezone
+- during the Americas timezone
 
 ## How to get help
 
