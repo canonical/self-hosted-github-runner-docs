@@ -51,7 +51,6 @@ The following is a list of runners currently available:
 | amd64   | noble | large | self-hosted-linux-amd64-noble-large-tiobe             | large-tiobe        |
 | amd64   | noble | medium | self-hosted-linux-amd64-noble-medium                  |                    |
 | amd64   | noble | medium | self-hosted-linux-amd64-noble-tiobe                   | tiobe              |
-| amd64   | noble | medium | self-hosted-linux-amd64-noble-medium-fips             | fips               |
 | amd64   | noble | xlarge | self-hosted-linux-amd64-noble-xlarge                  |                    |
 | arm64   | jammy | large | self-hosted-linux-arm64-jammy-large                   |                    |
 | arm64   | jammy | medium | self-hosted-linux-arm64-jammy-medium                  |                    |
@@ -59,6 +58,7 @@ The following is a list of runners currently available:
 | arm64   | jammy | xlarge | self-hosted-linux-arm64-jammy-xlarge                  |                    |
 | arm64   | noble | large | self-hosted-linux-arm64-noble-large                   |                    |
 | arm64   | noble | medium | self-hosted-linux-arm64-noble-medium                  |                    |
+| arm64   | noble | medium | self-hosted-linux-arm64-noble-medium-fips             | fips               |
 | arm64   | noble | xlarge | self-hosted-linux-amd64-noble-xlarge                  |                    |
 | ppc64el | noble | medium | self-hosted-linux-ppc64el-noble-edge                  | edge               |
 | s390x   | noble | medium | self-hosted-linux-s390x-noble-edge                    | edge               |
