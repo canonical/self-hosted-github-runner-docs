@@ -1,9 +1,9 @@
 (what-packages-are-installed)=
 
-# What packages are installed
+# What packages are installed?
 
-The Canonical hosted GitHub runners do not have parity with 
-[GitHub hosted runners](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md)
+The Canonical hosted GitHub runners do not have matching parity with 
+[GitHub hosted runners](https://github.com/actions/runner-images/blob/main/images/ubuntu)
 in regards to the system setup.
 
 ## Installed packages
