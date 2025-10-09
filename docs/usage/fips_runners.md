@@ -11,3 +11,6 @@ Ubuntu Pro is gated content available to Canonical employees but which requires 
 Therefore, publishing any artefact based on Ubuntu Pro content (e.g. as a GitHub artefact for external download) 
 is not allowed. There may be exceptions to this rule (e.g. explicit permission from executive level). 
 It is your responsibility to comply with this rule; Platform Engineering only provides the runners and does not control usage.
+
+Similar to the private endpoint runners, the FIPS runners will disallow any external contributors
+from running the workflow. This means that any jobs submitted from a fork of an external contributor will be disallowed.
