@@ -29,8 +29,11 @@ the following packages are installed from apt package repository.
 - `time`
 - `unzip`
 - `wget`
-- `yarn`
-- `yq`
+
+The following packages are also installed from different sources.
+
+- `yarn` (installed using NPM)
+- `yq` (built from source)
 
 ## Installed packages for S390X, PPC64LE
 
