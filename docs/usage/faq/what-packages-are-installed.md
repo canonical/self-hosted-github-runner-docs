@@ -29,6 +29,8 @@ the following packages are installed from apt package repository.
 - `time`
 - `unzip`
 - `wget`
+- `yarn`
+- `yq`
 
 ## Installed packages for S390X, PPC64LE
 
