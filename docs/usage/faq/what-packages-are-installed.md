@@ -30,6 +30,11 @@ the following packages are installed from apt package repository.
 - `unzip`
 - `wget`
 
+The following packages are also installed from different sources.
+
+- `yarn` (installed using NPM)
+- `yq` (built from source)
+
 ## Installed packages for S390X, PPC64LE
 
 On top of the installed packages above, the following packages are further installed on the runners
