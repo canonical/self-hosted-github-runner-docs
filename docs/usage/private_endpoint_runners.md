@@ -6,11 +6,11 @@ This guide covers how to start using the private-endpoint GitHub self-hosted run
 
 The following will be required to start using the private-endpoint runners. Each section is covered in detail below.
 
-* Firewall (private-endpoint-runners \-\> Canonical internal resources)  
-* Workflow private-endpoint-runner labels  
-* GitHub secrets  
-* Repository rules  
-* Do’s and Don’ts
+- Firewall (private-endpoint-runners \-\> Canonical internal resources)
+- Workflow private-endpoint-runner labels
+- GitHub secrets
+- Repository rules
+- Do’s and Don’ts
 
 ## Firewall
 
@@ -63,7 +63,7 @@ jobs:
         runs-on: [self-hosted, self-hosted-linux-amd64-jammy-private-endpoint-medium]
 ```
 
-For the list of flavors available, please refer to the [GitHub runner usage guide](https://docs.google.com/document/d/1dwokjUyb2av9VibwEMURLYtulRrRaXKt116gYZXaFYg/edit?tab=t.0).
+For the list of flavors available, please refer to the [GitHub runner usage guide](https://canonical-self-hosted-github-runner-docs.readthedocs-hosted.com/en/latest/usage/available_runners/).
 
 [Full PR example](https://github.com/canonical/github-runner-operator/pull/163) including GitHub workflow.
 
@@ -82,9 +82,9 @@ The private endpoint runners will disallow any external contributors from runnin
 Resources for private-endpoint runners are very limited. Furthermore, since it allows access to Canonical’s internal infrastructure, the usage comes with a lot of risks.  
 **Do** use the private-endpoint runners:
 
-* To access Canonical infrastructure-only provided resources
+- To access Canonical infrastructure-only provided resources
 
 **Do not** use the private-endpoint runners:
 
-* To test ARM64 architectures (use ARM64 runners for that)  
-* To run whatever can be run with regular self-hosted runners
+- To test ARM64 architectures (use ARM64 runners for that)
+- To run whatever can be run with regular self-hosted runners
