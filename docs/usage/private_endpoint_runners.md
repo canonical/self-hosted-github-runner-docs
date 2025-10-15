@@ -63,7 +63,7 @@ jobs:
         runs-on: [self-hosted, self-hosted-linux-amd64-jammy-private-endpoint-medium]
 ```
 
-For the list of flavors available, please refer to the {ref}`available_runners`
+For the list of flavors available, please refer to the {ref}`available_runners`.
 
 [Full PR example](https://github.com/canonical/github-runner-operator/pull/163) including GitHub workflow.
 
