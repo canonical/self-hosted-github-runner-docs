@@ -229,7 +229,7 @@ linkcheck_ignore = [
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
 
-linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
+linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*", r"https://library\.canonical\.com/.*"]
 
 # give linkcheck multiple tries on failure
 # linkcheck_timeout = 30
