@@ -33,38 +33,39 @@ would give you a large runner with base jammy on amd64. Every runner also has a 
 
 The following is a list of runners currently available:
 
-| ARCH | BASE-IMAGE | FLAVOR | SINGLE-LABEL | ADDITIONAL_LABELS |
-|---|------------|---|---|-------------------|
-| amd64 | focal      | large | self-hosted-linux-amd64-focal-large |                   |
-| amd64 | focal      | medium | self-hosted-linux-amd64-focal-medium |                   |
-| amd64 | jammy      | large | self-hosted-linux-amd64-jammy-large |                   |
-| amd64 | jammy      | large | self-hosted-linux-amd64-jammy-large-tiobe | large-tiobe       |
-| amd64 | jammy      | medium | self-hosted-linux-amd64-jammy-private-endpoint-medium |                   |
-| amd64 | jammy      | medium | self-hosted-linux-amd64-jammy-medium |                   |
-| amd64 | jammy      | medium | self-hosted-linux-amd64-jammy-tiobe | tiobe             |
-| amd64 | jammy      | xlarge | self-hosted-linux-amd64-jammy-xlarge |                   |
-| amd64 | noble      | 2xlarge | self-hosted-linux-amd64-noble-2xlarge |                   |
-| amd64 | noble      | 2xlarge | self-hosted-linux-amd64-noble-2xlarge-tiobe | 2xlarge-tiobe     |
-| amd64 | noble      | 2xlarge-extra | self-hosted-linux-amd64-noble-2xlarge-extra |                   |
-| amd64 | noble      | large | self-hosted-linux-amd64-noble-large |                   |
-| amd64 | noble      | large | self-hosted-linux-amd64-noble-large-tiobe | large-tiobe       |
-| amd64 | noble      | medium | self-hosted-linux-amd64-noble-edge | edge              |
-| amd64 | noble      | medium | self-hosted-linux-amd64-noble-medium |                   |
-| amd64 | noble      | medium | self-hosted-linux-amd64-noble-pfe-ci | pfe-ci            |
-| amd64 | noble      | medium | self-hosted-linux-amd64-noble-private-endpoint-medium |                   |
-| amd64 | noble      | medium | self-hosted-linux-amd64-noble-tiobe | tiobe             |
-| amd64 | noble      | xlarge | self-hosted-linux-amd64-noble-xlarge |                   |
-| amd64 | noble      | xlarge | self-hosted-linux-amd64-noble-private-endpoint-xlarge |                   |
-| arm64 | jammy      | large | self-hosted-linux-arm64-jammy-large |                   |
-| arm64 | jammy      | medium | self-hosted-linux-arm64-jammy-medium |                   |
-| arm64 | noble      | medium | self-hosted-linux-arm64-noble-edge | edge              |
-| arm64 | jammy      | xlarge | self-hosted-linux-arm64-jammy-xlarge |                   |
-| arm64 | noble      | large | self-hosted-linux-arm64-noble-large |                   |
-| arm64 | noble      | medium | self-hosted-linux-arm64-noble-medium |                   |
-| arm64 | noble      | medium | self-hosted-linux-arm64-noble-medium-fips | fips              |
-| arm64 | noble      | xlarge | self-hosted-linux-arm64-noble-xlarge |                   |
-| ppc64el | noble      | medium | self-hosted-linux-ppc64el-noble-edge | edge              |
-| s390x | noble      | medium | self-hosted-linux-s390x-noble-edge | edge              |
+| ARCH    | BASE-IMAGE | FLAVOR        | SINGLE-LABEL                                          | ADDITIONAL_LABELS |
+| ------- | ---------- | ------------- | ----------------------------------------------------- | ----------------- |
+| amd64   | focal      | large         | self-hosted-linux-amd64-focal-large                   |                   |
+| amd64   | focal      | medium        | self-hosted-linux-amd64-focal-medium                  |                   |
+| amd64   | jammy      | large         | self-hosted-linux-amd64-jammy-large                   |                   |
+| amd64   | jammy      | large         | self-hosted-linux-amd64-jammy-large-tiobe             | large-tiobe       |
+| amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-private-endpoint-medium |                   |
+| amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-medium                  |                   |
+| amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-tiobe                   | tiobe             |
+| amd64   | jammy      | xlarge        | self-hosted-linux-amd64-jammy-xlarge                  |                   |
+| amd64   | noble      | 2xlarge       | self-hosted-linux-amd64-noble-2xlarge                 |                   |
+| amd64   | noble      | 2xlarge       | self-hosted-linux-amd64-noble-2xlarge-tiobe           | 2xlarge-tiobe     |
+| amd64   | noble      | 2xlarge-extra | self-hosted-linux-amd64-noble-2xlarge-extra           |                   |
+| amd64   | noble      | large         | self-hosted-linux-amd64-noble-large                   |                   |
+| amd64   | noble      | large         | self-hosted-linux-amd64-noble-large-tiobe             | large-tiobe       |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-edge                    | edge              |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-medium                  |                   |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-pfe-ci                  | pfe-ci            |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-private-endpoint-medium |                   |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-tiobe                   | tiobe             |
+| amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-xlarge                  |                   |
+| amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-private-endpoint-xlarge |                   |
+| arm64   | jammy      | large         | self-hosted-linux-arm64-jammy-large                   |                   |
+| arm64   | jammy      | medium        | self-hosted-linux-arm64-jammy-medium                  |                   |
+| arm64   | noble      | medium        | self-hosted-linux-arm64-noble-edge                    | edge              |
+| arm64   | jammy      | xlarge        | self-hosted-linux-arm64-jammy-xlarge                  |                   |
+| arm64   | noble      | large         | self-hosted-linux-arm64-noble-large                   |                   |
+| arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium                  |                   |
+| arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium-fips             | fips              |
+| arm64   | noble      | xlarge        | self-hosted-linux-arm64-noble-xlarge                  |                   |
+| ppc64el | noble      | medium        | self-hosted-linux-ppc64el-noble-edge                  | edge              |
+| s390x   | noble      | medium        | self-hosted-linux-s390x-noble-edge                    | edge              |
+
 
 Note that this list includes special runners (you see the additional label). Please refer to the sections below in order to understand when to use those.
 
