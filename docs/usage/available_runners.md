@@ -34,7 +34,7 @@ would give you a large runner with base jammy on amd64. Every runner also has a 
 The following is a list of runners currently available:
 
 | ARCH    | BASE-IMAGE | FLAVOR        | SINGLE-LABEL                                          | ADDITIONAL_LABELS |
-| ------- | ---------- | ------------- | ----------------------------------------------------- | ----------------- |
+| ------- | ---------- | ------------- |-------------------------------------------------------|-------------------|
 | amd64   | focal      | large         | self-hosted-linux-amd64-focal-large                   |                   |
 | amd64   | focal      | medium        | self-hosted-linux-amd64-focal-medium                  |                   |
 | amd64   | jammy      | large         | self-hosted-linux-amd64-jammy-large                   |                   |
@@ -65,6 +65,8 @@ The following is a list of runners currently available:
 | arm64   | noble      | xlarge        | self-hosted-linux-arm64-noble-xlarge                  |                   |
 | ppc64el | noble      | medium        | self-hosted-linux-ppc64el-noble-edge                  | edge              |
 | s390x   | noble      | medium        | self-hosted-linux-s390x-noble-edge                    | edge              |
+| s390x   | noble      | medium        | self-hosted-linux-s390x-noble-medium                  |                   |
+
 
 
 Note that this list includes special runners (you see the additional label). Please refer to the sections below in order to understand when to use those.
