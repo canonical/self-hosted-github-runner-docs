@@ -15,4 +15,4 @@ If you encounter issues with `apt update` frequently in your workflows, and you 
 
 it is likely that the package mirror sync is not correctly working (e.g. multiple versions of the mirror have different sync dates).
 
-You can either reach out to us or IS to investigate the problem.
+Reach out to either us or IS to investigate the problem.
