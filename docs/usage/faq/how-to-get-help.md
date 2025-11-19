@@ -15,4 +15,4 @@ please complete the following items:
 - If possible, you can showcase that the workflow is working in a GitHub hosted runner, to indicate it is
 definitely an issue with the self-hosted runners
 
-We regularly host office hours ([every Tue, 8:30 UTC](https://meet.google.com/ucn-nidb-amm)). This is also a good place to ask questions and troubleshoot together.
+We regularly host office hours ([every Mon, 8:30 UTC](https://meet.google.com/ucn-nidb-amm)). This is also a good place to ask questions and troubleshoot together.
