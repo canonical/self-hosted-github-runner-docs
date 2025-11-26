@@ -50,7 +50,7 @@ For this reason, the resource on PS6/PS7 should be guarded with authentication i
 For resources on PS6, the network traffic would be passing through the PS7 egress proxy. Hence from the resource on PS6 the traffic would appear to come from PS7 egress proxy.
 As such for the resource on PS6 all packets would be from the IP of the PS7 egress proxy and the resource would not be able to distinguish where the packets came from.
 This means restriction in network access to the resource on PS6 needs to be done on the PS7 egress proxy.
-If the PS7 egress proxy rules are not setup correctly, it is possible anyone with access to the PS7 egress proxy to send traffic to the resource on PS6.
+If the PS7 egress proxy rules are not setup correctly, it is possible for anyone with access to the PS7 egress proxy to send traffic to the resource on PS6.
 
 ### Setup to access resource on PS7
 
