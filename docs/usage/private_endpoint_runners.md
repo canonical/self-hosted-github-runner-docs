@@ -42,7 +42,7 @@ Outgoing network traffic from PS7 virtual machine will need to be go through the
 
 For the runners on PS7 to reach resources on PS6, the network traffic will originate from the PS7 virtual machine hosting the runner, then the traffic would reach PS7 egress proxy and be forwarded to PS6 ingress.
 
-## Security implications
+### Security implications
 
 For both resource on PS7 and PS6, enabling the access from the private-endpoint runner means anyone that can access the private-endpoint runner would be able to access the resource on PS6/PS7.
 For this reason, the resource on PS6/PS7 should be guard with authentication if the resource is not intended for company wide use.
@@ -80,7 +80,7 @@ The PS7 egress proxy is a squid proxy will the configuration defined in the file
 First, the resource on PS6 needs to be defined in `ps7.conf`.
 Here are examples for domain based and IP based definitions:
 
-```txt
+```
 acl certification_canonical_com dstdomain certification.canonical.com
 ...
 acl ps6_github_runner_dockerhub_cache_ip dst 162.213.35.28
@@ -90,7 +90,7 @@ The access list definitions with `acl` are generally at the top of the file.
 
 Then allow `ps7_private_endpoint_runners` to access the defined access list, such as:
 
-```txt
+```
 http_access allow ps7_private_endpoint_runners certification_canonical_com
 ...
 http_access allow ps7_github_runners ps6_github_runner_dockerhub_cache_ip
@@ -98,7 +98,7 @@ http_access allow ps7_github_runners ps6_github_runner_dockerhub_cache_ip
 
 These `http_access` rules must be place before the following line in the file:
 
-```txt
+```
 http_access deny ps7_github_runners to_rfc1918
 ```
 
