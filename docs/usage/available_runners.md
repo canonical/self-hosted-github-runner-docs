@@ -61,6 +61,7 @@ The following is a list of runners currently available:
 | arm64   | jammy      | xlarge        | self-hosted-linux-arm64-jammy-xlarge                  |                   |
 | arm64   | noble      | large         | self-hosted-linux-arm64-noble-large                   |                   |
 | arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium                  |                   |
+| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-medium-fips             | fips              |
 | arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium-fips             | fips              |
 | arm64   | noble      | xlarge        | self-hosted-linux-arm64-noble-xlarge                  |                   |
 | ppc64el | noble      | medium        | self-hosted-linux-ppc64el-noble-edge                  | edge              |
