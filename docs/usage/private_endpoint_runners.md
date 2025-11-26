@@ -38,23 +38,23 @@ OpenStack networking features can be utilized, such as setup security group rule
 
 #### PS6
 
-Outgoing network traffic from PS7 virtual machine will need to be go through the PS7 egress proxy.
+Outgoing network traffic from PS7 virtual machine will need to go through the PS7 egress proxy.
 
 For the runners on PS7 to reach resources on PS6, the network traffic will originate from the PS7 virtual machine hosting the runner, then the traffic would reach PS7 egress proxy and be forwarded to PS6 ingress.
 
 ### Security implications
 
 For both resource on PS7 and PS6, enabling the access from the private-endpoint runner means anyone that can access the private-endpoint runner would be able to access the resource on PS6/PS7.
-For this reason, the resource on PS6/PS7 should be guard with authentication if the resource is not intended for company wide use.
+For this reason, the resource on PS6/PS7 should be guarded with authentication if the resource is not intended for company wide use.
 
 For resources on PS6, the network traffic would be passing through the PS7 egress proxy. Hence from the resource on PS6 the traffic would appear to come from PS7 egress proxy.
 As such for the resource on PS6 all packets would be from the IP of the PS7 egress proxy and the resource would not be able to distinguish where the packets came from.
 This means restriction in network access to the resource on PS6 needs to be done on the PS7 egress proxy.
-If the PS7 egress proxy rule are not setup correctly, it is possible anyone with access to the PS7 egress proxy to send traffic to the resource on PS6.
+If the PS7 egress proxy rules are not setup correctly, it is possible anyone with access to the PS7 egress proxy to send traffic to the resource on PS6.
 
 ### Setup to access resource on PS7
 
-For allow traffic between two PS7 model, there is an automated IS request for it. The steps are as follows:
+To allow traffic between two PS7 models, there is an automated IS request for it. The steps are as follows:
 
 1. Go to [IS request](https://portal.admin.canonical.com/requests/new)
 2. Select `Establish inter-model network peering (PS7)` in the dropdown menu.
@@ -75,7 +75,7 @@ All network traffic going out of PS7 needs to go through the PS7 egress proxy, t
 
 #### PS7 egress proxy
 
-The PS7 egress proxy is a squid proxy will the configuration defined in the file `ps7.conf` with in the git repo `canonical-is-internal-proxy-configs` on launchpad.
+The PS7 egress proxy is a squid proxy with the configuration defined in the file `ps7.conf` within the git repo `canonical-is-internal-proxy-configs` on launchpad.
 
 First, the resource on PS6 needs to be defined in `ps7.conf`.
 Here are examples for domain based and IP based definitions:
@@ -96,7 +96,7 @@ http_access allow ps7_private_endpoint_runners certification_canonical_com
 http_access allow ps7_github_runners ps6_github_runner_dockerhub_cache_ip
 ```
 
-These `http_access` rules must be place before the following line in the file:
+These `http_access` rules must be placed before the following line in the file:
 
 ```
 http_access deny ps7_github_runners to_rfc1918
@@ -120,7 +120,7 @@ The PS7 egress proxy is defined in `canonical-is-firewalls` as:
     - instance-egress-proxy-snat
 ```
 
-Therefore a rule need to be defined from `egress-proxies` to the resource on the correct port.
+Therefore a rule needs to be defined from `egress-proxies` to the resource on the correct port.
 
 Here are some example rules:
 
