@@ -112,20 +112,15 @@ The PS7 egress proxy source ips are incorporated  in the service definition of `
 
 Therefore a rule needs to be defined from `services/is/github-runner/production-private-endpoint-runner` to the resource on the correct port.
 
-Here are some example rules:
+Here is an example rule:
 
 ```yaml
-    - comment: "Allow tmate ssh from ps7 prod runners"
-      from: [services/is/github-runner/production-private-endpoint-runners]
-      to: [services/is-charms/tmate-ssh-server/tmate-ssh-server-ps6]
-      ports: [tcp/10022] # Custom port after 22 exposed by tmate-ssh-server charm
-```
-
-```yaml
-    - comment: "Allow traffic from ps7 egress-proxies to access testflinger"
-      from: [services/is/ps7/egress-proxies]
-      to: [services/pes/certification-kubernetes-production/workers-public]
-      ports: [http, https]
+- comment: "Allow private-endpoint-runners to access TEL Labs"
+  from:
+    - services/is/github-runner/production-private-endpoint-runners
+  to:
+    - services/is/tel/labs
+  ports: [ssh, ping]
 ```
 
 ## PS6 private-endpoint runners
