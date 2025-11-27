@@ -4,10 +4,11 @@
 
 This guide covers how to start using the private-endpoint GitHub self-hosted runners which allow access to Canonical internal resources. For example, the private endpoint runners can allow connection to OpenStack or Juju controllers on PS5/PS6/PS7 for testing on different architectures only available within the Canonical infrastructure.
 
-The private-endpoint runners are being migrated from PS6 to PS7.
+The private-endpoint runners are being migrated from PS6 to PS7. Currently, there is one deployment with jammy base on PS6. All other deployments are and will be on PS7 (upwards).
+
 **The only private-endpoint runner on PS6 is with the label `self-hosted-linux-amd64-jammy-private-endpoint-medium`.**
 
-Currently, there is one deployment with jammy base on PS6. All other deployments are and will be on PS7 (upwards).
+**We encourage to use the runners on PS7 if possible, as there is a lot more quota available and we will not add more quota on the existing PS6 deployment.**
 
 The following will be required to start using the private-endpoint runners. Each section is covered in detail below.
 
@@ -30,6 +31,8 @@ An example PS7 private-endpoint runner would be `self-hosted-linux-amd64-noble-p
 For the list of flavors available, please refer to the {ref}`available_runners`.
 
 ### Network topology
+
+The PS7 architecture is very different from PS5/PS6, for details see [IS documentation on PS7 network](https://canonical-information-systems-documentation.readthedocs-hosted.com/en/latest/how-to/ps7-developer-onboarding/).
 
 The private-endpoint self-hosted runners are virtual machines on PS7 and they are able to access resources on PS7 and PS5/PS6.
 How it works will differ based on which ProdStack it is accessing.
@@ -96,8 +99,12 @@ Then allow `ps7_private_endpoint_runners` to access the defined access list, suc
 
 ```
 http_access allow ps7_private_endpoint_runners certification_canonical_com
-...
-http_access allow ps7_github_runners ps6_github_runner_dockerhub_cache_ip
+```
+
+As a safe guard, it would be good to deny the standard runners from accessing the resource.
+
+```
+http_access deny ps7_github_runners certification_canonical_com
 ```
 
 These `http_access` rules must be placed before the following line in the file:
@@ -105,6 +112,9 @@ These `http_access` rules must be placed before the following line in the file:
 ```
 http_access deny ps7_github_runners to_rfc1918
 ```
+
+This rule denies traffic to all private IPs from the PS7 github-runners.
+The squid proxy rules are routed by the first rule matched. Hence rules allowing any traffic to private IPs needs to be placed before this rule.
 
 #### Firewall for PS5/PS6 ingress
 
@@ -128,7 +138,8 @@ Here is an example rule:
 ```
 
 ## PS6 private-endpoint runners
-This applies only to the deployment with the label self-hosted-linux-amd64-jammy-private-endpoint-medium
+
+**This applies only to the deployment with the label `self-hosted-linux-amd64-jammy-private-endpoint-medium`.**
 
 To start allowing traffic from the self-hosted private-endpoint GitHub runners to your desired service within Canonical, please set up firewall rules accordingly at [https://code.launchpad.net/canonical-is-firewalls/](https://code.launchpad.net/canonical-is-firewalls/) . Note that granting access here means **anyone in Canonical using the private-endpoint runners will gain access** accordingly.  
 The private-endpoint runner service is defined under `services/is/github-runner.yaml production-private-endpoint-runners`.
