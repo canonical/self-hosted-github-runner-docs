@@ -2,7 +2,7 @@
 
 # Private endpoint runners user guide
 
-This guide covers how to start using the private-endpoint GitHub self-hosted runners which allow access to Canonical internal resources. For example, the private endpoint runners can allow connection to OpenStack or Juju controllers on PS6/PS7 for testing on different architectures only available within the Canonical infrastructure.
+This guide covers how to start using the private-endpoint GitHub self-hosted runners which allow access to Canonical internal resources. For example, the private endpoint runners can allow connection to OpenStack or Juju controllers on PS5/PS6/PS7 for testing on different architectures only available within the Canonical infrastructure.
 
 The private-endpoint runners are being migrated from PS6 to PS7. Currently, there are some deployments on PS6 and others on PS7.
 
@@ -12,7 +12,7 @@ The following will be required to start using the private-endpoint runners. Each
   - Network topology
   - Security implications
   - Setup to access resource on PS7
-  - Setup to access resource on PS6
+  - Setup to access resource on PS5/PS6
 - PS6 private-endpoint runners
 - Workflow private-endpoint-runner labels
 - GitHub secrets
@@ -27,7 +27,7 @@ For the list of flavors available, please refer to the {ref}`available_runners`.
 
 ### Network topology
 
-The private-endpoint self-hosted runners are virtual machines on PS7 and they are able to access resources on PS7 and PS6.
+The private-endpoint self-hosted runners are virtual machines on PS7 and they are able to access resources on PS7 and PS5/PS6.
 How it works will differ based on which ProdStack it is accessing.
 
 #### PS7
@@ -36,21 +36,21 @@ Since the runners are on PS7, this will be relatively simple as the network traf
 
 OpenStack networking features can be utilized, such as setup security group rules to allow and deny types of traffic. See [OpenStack networking](https://docs.openstack.org/mitaka/networking-guide/intro-os-networking.html) for more details.
 
-#### PS6
+#### PS5/PS6
 
 Outgoing network traffic from PS7 virtual machine will need to go through the PS7 egress proxy.
 
-For the runners on PS7 to reach resources on PS6, the network traffic will originate from the PS7 virtual machine hosting the runner, then the traffic would reach PS7 egress proxy and be forwarded to PS6 ingress.
+For the runners on PS7 to reach resources on PS5/PS6, the network traffic will originate from the PS7 virtual machine hosting the runner, then the traffic would reach PS7 egress proxy and be forwarded to PS5/PS6 ingress.
 
 ### Security implications
 
-For both resource on PS7 and PS6, enabling the access from the private-endpoint runner means anyone that can access the private-endpoint runner would be able to access the resource on PS6/PS7.
-For this reason, the resource on PS6/PS7 should be guarded with authentication if the resource is not intended for company wide use.
+For both resource on PS7 and PS5/PS6, enabling the access from the private-endpoint runner means anyone that can access the private-endpoint runner would be able to access the resource on PS5/PS6/PS7.
+For this reason, the resource on PS5/PS6/PS7 should be guarded with authentication if the resource is not intended for company wide use.
 
-For resources on PS6, the network traffic would be passing through the PS7 egress proxy. Hence from the resource on PS6 the traffic would appear to come from PS7 egress proxy.
-As such for the resource on PS6 all packets would be from the IP of the PS7 egress proxy and the resource would not be able to distinguish where the packets came from.
-This means restriction in network access to the resource on PS6 needs to be done on the PS7 egress proxy.
-If the PS7 egress proxy rules are not setup correctly, it is possible for anyone with access to the PS7 egress proxy to send traffic to the resource on PS6.
+For resources on PS6, the network traffic would be passing through the PS7 egress proxy. Hence from the resource on PS5/PS6 the traffic would appear to come from PS7 egress proxy.
+As such for the resource on PS5/PS6 all packets would be from the IP of the PS7 egress proxy and the resource would not be able to distinguish where the packets came from.
+This means restriction in network access to the resource on PS5/PS6 needs to be done on the PS7 egress proxy.
+If the PS7 egress proxy rules are not setup correctly, it is possible for anyone with access to the PS7 egress proxy to send traffic to the resource on PS5/PS6.
 
 ### Setup to access resource on PS7
 
@@ -66,12 +66,12 @@ Once approved, the request should be automatically processed, and the private-en
 If you have encountered issues, please check if the OpenStack security group is configured to allow the type of traffic you are using.
 If you are using juju, juju should be automatically managing the security group. You should be able to expose resource through juju.
 
-### Setup to access resource on PS6
+### Setup to access resource on PS5/PS6
 
 All network traffic going out of PS7 needs to go through the PS7 egress proxy, therefore the setup is split into two steps.
 
 1. Allowing traffic to pass through PS7 egress proxy on the proxy side.
-2. Allowing traffic from PS7 egress proxy to reach resources on PS6 firewall side.
+2. Allowing traffic from PS7 egress proxy to reach resources on PS5/PS6 firewall side.
 
 #### PS7 egress proxy
 
@@ -102,9 +102,9 @@ These `http_access` rules must be placed before the following line in the file:
 http_access deny ps7_github_runners to_rfc1918
 ```
 
-#### Firewall for PS6 ingress
+#### Firewall for PS5/PS6 ingress
 
-Once the PS7 egress proxy is redirecting the traffic, the company firewall needs to be configured to allow traffic from the egress proxy to the resource on PS6.
+Once the PS7 egress proxy is redirecting the traffic, the company firewall needs to be configured to allow traffic from the egress proxy to the resource on PS5/PS6.
 
 The company firewall is defined in the git repo `canonical-is-firewalls` on launchpad.
 
