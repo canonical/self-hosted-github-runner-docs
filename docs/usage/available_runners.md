@@ -42,7 +42,6 @@ The following is a list of runners currently available:
 | amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-private-endpoint-medium |                   |
 | amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-medium                  |                   |
 | amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-tiobe                   | tiobe             |
-| amd64   | jammy      | medium        | self-hosted-linux-amd64-jammy-medium-fips             | fips              |
 | amd64   | jammy      | xlarge        | self-hosted-linux-amd64-jammy-xlarge                  |                   |
 | amd64   | noble      | 2xlarge       | self-hosted-linux-amd64-noble-2xlarge                 |                   |
 | amd64   | noble      | 2xlarge       | self-hosted-linux-amd64-noble-2xlarge-tiobe           | 2xlarge-tiobe     |
@@ -58,7 +57,6 @@ The following is a list of runners currently available:
 | amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-xlarge                  |                   |
 | amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-private-endpoint-xlarge |                   |
 | arm64   | jammy      | medium        | self-hosted-linux-arm64-jammy-medium                  |                   |
-| arm64   | jammy      | medium        | self-hosted-linux-arm64-jammy-medium-fips             | fips              |
 | arm64   | jammy      | large         | self-hosted-linux-arm64-jammy-large                   |                   |
 | arm64   | jammy      | xlarge        | self-hosted-linux-arm64-jammy-xlarge                  |                   |
 | arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium                  |                   |
