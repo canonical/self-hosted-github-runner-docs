@@ -143,6 +143,7 @@ namedtuple
 NAND
 natively
 netbox
+nftables
 nginx
 NGINX
 NotImplementedError
