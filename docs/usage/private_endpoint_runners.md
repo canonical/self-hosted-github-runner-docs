@@ -59,7 +59,7 @@ As such for the resource on PS5/PS6 all packets would be from the IP of the PS7 
 This means restriction in network access to the resource on PS5/PS6 needs to be done on the PS7 egress proxy.
 If the PS7 egress proxy rules are not set up correctly, it is possible for anyone with access to the PS7 egress proxy to send traffic to the resource on PS5/PS6.
 
-### Setup to access resource on PS7
+### Setup to access resources on PS7
 
 To allow traffic between two PS7 models, there is an automated IS request for it. The steps are as follows:
 
@@ -73,7 +73,7 @@ Once approved, the request should be automatically processed, and the private-en
 If you have encountered issues, please check if the OpenStack security group is configured to allow the type of traffic you are using.
 If you are using Juju, Juju should automatically manage the security group. You should be able to expose a resource through Juju.
 
-### Setup to access resource on PS5/PS6
+### Setup to access resources on PS5/PS6
 
 All network traffic going out of PS7 needs to go through the PS7 egress proxy, therefore the setup is split into two steps.
 
@@ -122,7 +122,7 @@ Once the PS7 egress proxy is redirecting the traffic, the company firewall needs
 
 The company firewall is defined in the git repo `canonical-is-firewalls` on Launchpad.
 
-The PS7 egress proxy source ips are incorporated  in the service definition of `services/is/github-runner/production-private-endpoint-runners` in the `canonical-is-firewalls` repository.
+The PS7 egress proxy source IPs are incorporated  in the service definition of `services/is/github-runner/production-private-endpoint-runners` in the `canonical-is-firewalls` repository.
 
 Therefore a rule needs to be defined from `services/is/github-runner/production-private-endpoint-runner` to the resource on the correct port.
 
@@ -139,7 +139,9 @@ Here is an example rule:
 
 ## PS6 private-endpoint runners
 
-**This applies only to the deployment with the label `self-hosted-linux-amd64-jammy-private-endpoint-medium`.**
+.. note::
+
+   This applies only to the deployment with the label `self-hosted-linux-amd64-jammy-private-endpoint-medium`.
 
 To start allowing traffic from the self-hosted private-endpoint GitHub runners to your desired service within Canonical, please set up firewall rules accordingly at [https://code.launchpad.net/canonical-is-firewalls/](https://code.launchpad.net/canonical-is-firewalls/) . Note that granting access here means **anyone in Canonical using the private-endpoint runners will gain access** accordingly.  
 The private-endpoint runner service is defined under `services/is/github-runner.yaml production-private-endpoint-runners`.
