@@ -46,6 +46,8 @@ OpenStack networking features can be utilized, such as setting up security group
 #### PS5/PS6
 
 Outgoing network traffic from PS7 virtual machine will need to go through the PS7 egress proxy.
+For the PS7 private-endpoint runners, this is done automatically with [aproxy](https://snapcraft.io/aproxy). 
+The PS7 private-endpoint runners use [nftables](https://www.netfilter.org/projects/nftables/index.html) to route external IPs, PS5 IPs, and PS6 IPs to aproxy, which then forward the traffic to PS7 egress proxy.
 
 For the runners on PS7 to reach resources on PS5/PS6, the network traffic will originate from the PS7 virtual machine hosting the runner, then the traffic would reach PS7 egress proxy and be forwarded to PS5/PS6 ingress.
 
