@@ -94,6 +94,7 @@ jobs:
 ```
 
 ## Access limited to workflow actor
+
 Workflows on self-hosted runners can only be accessed by the actor (see [github.actor](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context)). The actor is the user who initially triggered the workflow run. Retrying a workflow run from a different user does not grant that user access to the runner machine. Setting `limit-access-to-actor` to false is not supported.
 
 ## Further information
