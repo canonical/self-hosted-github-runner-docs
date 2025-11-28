@@ -26,7 +26,7 @@ For instructions on how to connect to Canonical VPN, please read [Using our VPN]
 
 ## 2. Set up GitHub SSH keys
 
-The workflow will set up SSH session to use the SSH keys registered on GitHub under your account.
+The workflow will set up an SSH session to use the SSH keys registered on GitHub under your account.
 To add SSH keys to your GitHub account, please see [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ## 3. Use the `canonical/action-tmate` workflow
@@ -73,7 +73,7 @@ or: ssh -i <path-to-private-SSH-key> -p10022 Nuw8ED2ymQsP6TcZ7LzXFDr8F@10.163.21
 
 For this workflow, the SSH command would be `ssh -p 10022 Nuw8ED2ymQsP6TcZ7LzXFDr8F@10.163.212.179`.
 
-## Optional: Use the `canonical/action-tmate` workflow
+## Optional: Use "detached" mode
 
 To use SSH into the runners without having to block the workflow, use `action-tmate` in detached
 mode.
@@ -92,6 +92,9 @@ jobs:
       with:
         detached: true
 ```
+
+## No support for limit-access-to-actor set to false
+Workflows on the self-hosted runners can only be accessed by the actor (refer to [github.actor](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context), meaning the user who initially triggered the particular workflow run. Retrying a workflow run from a different user does not give the retryer access to the runner machine. Setting the option `limit-access-to-actor` to false is not supported.
 
 ## Further information
 
