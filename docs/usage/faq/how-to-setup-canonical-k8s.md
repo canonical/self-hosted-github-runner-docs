@@ -1,33 +1,24 @@
-#
+(how_to_set_up_canonical_k8s)=
 
-If you try to set up Canonical k8s directly you will run into
+# How can I set up Canonical Kubernetes in my workflow?
 
-```
-Bootstrap config verification failed: pre-init checks failed for node: The path '/run/containerd' required for the containerd socket already exists. This may mean that another service is already using that path, and it conflicts with the k8s snap. Please make sure that there is no other service installed that uses the same path, and remove the existing directory.(dev-only): You can change the default k8s containerd base path with the containerd-base-dir option in the bootstrap / join-cluster config file.
-```
+## Option A - removing Docker and containerd (Recommended)
 
-because docker is installed and already using containerd.
+If Docker is not required in your workflow, uninstall `docker.io` and `containerd`
 
-## Option A - removing docker and containerd
-
-Uninstall docker.io and containerd
-
-```
-          sudo apt-get remove -y docker.io containerd
-          sudo rm -rf /run/containerd
+```bash
+sudo apt-get remove -y docker.io containerd
+sudo rm -rf /run/containerd
 ```
 
 
-Before installing Canonical k8s, you should integrate Canonical k8s with our dockerhub mirror, otherwise bootstrapping
-might fail due to rate limit issues
+Before installing Canonical Kubernetes, you should integrate Canonical Kubernetes with our DockerHub mirror,
+otherwise bootstrapping  might fail due to DockerHub rate limit issues (see also {ref}`how_to_avoid_dockerhub_rate_limits`).
+
+Set the docker.io mirror config file to point to  `MIRROR_CONFIG=/etc/containerd/hosts.d/docker.io` (the default location Canonical Kubernetes).
 
 
-
-Set the mirror confing to point to  `MIRROR_CONFIG=/etc/containerd/hosts.d/docker.io` (the default of Canonical k8s).
-
-
-
-```yaml
+```bash
 if [ -n "$DOCKERHUB_MIRROR" ]; then
 sudo mkdir -p ${MIRROR_CONFIG}
 sudo chown $USER ${MIRROR_CONFIG}
@@ -39,29 +30,30 @@ fi
 ```
 
 
-Finally, install and bootstrap Canonical k8s
+Finally, install and bootstrap Canonical Kubernetes
 
+```bash
+sudo snap install k8s --classic --channel=1.34-classic/stable
+sudo k8s bootstrap
+sudo k8s status --wait-ready
 ```
-          sudo snap install k8s --classic --channel=1.34-classic/stable
-          sudo k8s bootstrap
-          sudo k8s status --wait-ready
-```
 
 
-Total workflow :
+Example workflow :
 
-```
+```yaml
 name: CI
 on: [push]
 jobs:
   self-hosted:
-    runs-on: ["self-hosted", "edge", "amd64"]
+    runs-on: ["self-hosted-linux-amd64-noble-medium"]
     steps:
       - name: Remove docker and containerd
         run: |
           export DEBIAN_FRONTEND=noninteractive
           sudo apt-get remove -y docker.io containerd
           sudo rm -rf /run/containerd
+
       - name: Setup integration with dockerhub mirror
         run: |
           MIRROR_CONFIG=/etc/containerd/hosts.d/docker.io
@@ -73,20 +65,27 @@ jobs:
           capabilities = ["pull", "resolve"]
           EOF
           fi
+ 
       - name: Install k8s snap and bootstrap
         run: |
           sudo snap install k8s --classic --channel=1.34-classic/stable
           sudo k8s bootstrap
           sudo k8s status --wait-ready
+
+      - name: Your tests
+        run: |
+          ...
 ```
 
 ## Option B - Set different containerd-base-dir
-With option B we keep docker and containerd, and specify a different base dir for Canonical-k8s.
+
+Option B is useful if you need to still use Docker on your machine. With option B we keep Docker and containerd,
+and specify a [different containerd base directory](https://documentation.ubuntu.com/canonical-kubernetes/latest/snap/reference/config-files/bootstrap-config/#containerd-base-dir) for Canonical Kubernetes.
 
 First, choose a different basedir, e.g. `CONTAINERD_BASE_DIR=/opt/containerd`. 
-Setup mirror-config accordingly : "MIRROR_CONFIG=${CONTAINERD_BASE_DIR}/k8s-containerd/etc/containerd/hosts.d/docker.io"
+Then set the mirror config to point to the expected config based on your base directory: `MIRROR_CONFIG="${CONTAINERD_BASE_DIR}/k8s-containerd/etc/containerd/hosts.d/docker.io"`
 
-and then apply the dockerhub mirror config: 
+Afterwards, apply the DockerHub mirror config: 
 
 ```yaml
 if [ -n "$DOCKERHUB_MIRROR" ]; then
@@ -99,29 +98,32 @@ EOF
 fi
 ```
 
-Then install and Canonical k8s and bootstrap using CONTAINERD_BASE_DIR
+Then install Canonical Kubernetes and bootstrap using the aforementioned  `CONTAINERD_BASE_DIR`
 
+```bash
+sudo snap install k8s --classic --channel=1.34-classic/stable
+cat << EOF | sudo k8s bootstrap --file -
+containerd-base-dir: ${CONTAINERD_BASE_DIR}
+EOF
+# Note: the previous --file arguments override the default bootstrap options
+#       resulting in the following not being enabled by default
+sudo k8s enable network dns load-balancer local-storage gateway
+sudo k8s status --wait-ready
 ```
-          sudo snap install k8s --classic --channel=1.34-classic/stable
-          cat << EOF | sudo k8s bootstrap --file -
-          containerd-base-dir: ${CONTAINERD_BASE_DIR}
-          EOF 
-          sudo k8s status --wait-ready
-```
 
 
-Total workflow:
+Example workflow:
 
-```
+```yaml
 name: CI
 on: [push]
 jobs:
   self-hosted:
-    runs-on: ["self-hosted", "edge", "amd64"]
+    runs-on: ["self-hosted-linux-amd64-noble-medium"]
     steps:
       - name: Set different path for containerd
         run: |
-          CONTAINERD_BASE_DIR=/opt/containerd >> $GITHUB_ENV
+          echo "CONTAINERD_BASE_DIR=/opt/containerd" >> $GITHUB_ENV
 
       - name: Setup integration with dockerhub mirror
         run: |
@@ -138,8 +140,13 @@ jobs:
       - name: Install k8s snap and bootstrap
         run: |
           sudo snap install k8s --classic --channel=1.34-classic/stable
-          cat << EOF | sudo k8s bootstrap --file -
-          containerd-base-dir: ${CONTAINERD_BASE_DIR}
-          EOF 
-          sudo k8s status --wait-ready
+          echo "containerd-base-dir: ${CONTAINERD_BASE_DIR}" | sudo k8s bootstrap --file -
+          # Note: the previous --file arguments override the default bootstrap options
+          #       resulting in the following not being enabled by default
+          sudo k8s enable network dns load-balancer local-storage gateway
+          sudo k8s status --wait-ready --timeout 5m
+
+      - name: Your tests
+        run: |
+          ...
 ```
