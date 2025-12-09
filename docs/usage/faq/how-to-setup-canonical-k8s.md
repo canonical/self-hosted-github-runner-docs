@@ -82,7 +82,7 @@ jobs:
 Option B is useful if you need to still use Docker on your machine. With option B we keep Docker and containerd,
 and specify a [different containerd base directory](https://documentation.ubuntu.com/canonical-kubernetes/latest/snap/reference/config-files/bootstrap-config/#containerd-base-dir) for Canonical Kubernetes.
 
-First, choose a different basedir, e.g. `CONTAINERD_BASE_DIR=/opt/containerd`. 
+First, choose a different base directory, e.g. `CONTAINERD_BASE_DIR=/opt/containerd`. 
 Then set the mirror config to point to the expected config based on your base directory: `MIRROR_CONFIG="${CONTAINERD_BASE_DIR}/k8s-containerd/etc/containerd/hosts.d/docker.io"`
 
 Afterwards, apply the DockerHub mirror config: 
@@ -102,12 +102,18 @@ Then install Canonical Kubernetes and bootstrap using the aforementioned  `CONTA
 
 ```bash
 sudo snap install k8s --classic --channel=1.34-classic/stable
-cat << EOF | sudo k8s bootstrap --file -
+sudo k8s bootstrap --file - <<EOF
 containerd-base-dir: ${CONTAINERD_BASE_DIR}
+cluster-config:
+network:
+  enabled: true
+dns:
+  enabled: true
+gateway:
+  enabled: true
+local-storage:
+  enabled: true
 EOF
-# Note: the previous --file arguments override the default bootstrap options
-#       resulting in the following not being enabled by default
-sudo k8s enable network dns load-balancer local-storage gateway
 sudo k8s status --wait-ready
 ```
 
@@ -125,7 +131,7 @@ jobs:
         run: |
           echo "CONTAINERD_BASE_DIR=/opt/containerd" >> $GITHUB_ENV
 
-      - name: Setup integration with dockerhub mirror
+      - name: Setup integration with DockerHub mirror
         run: |
           MIRROR_CONFIG="${CONTAINERD_BASE_DIR}/k8s-containerd/etc/containerd/hosts.d/docker.io"
           if [ -n "$DOCKERHUB_MIRROR" ]; then
@@ -140,11 +146,19 @@ jobs:
       - name: Install k8s snap and bootstrap
         run: |
           sudo snap install k8s --classic --channel=1.34-classic/stable
-          echo "containerd-base-dir: ${CONTAINERD_BASE_DIR}" | sudo k8s bootstrap --file -
-          # Note: the previous --file arguments override the default bootstrap options
-          #       resulting in the following not being enabled by default
-          sudo k8s enable network dns load-balancer local-storage gateway
-          sudo k8s status --wait-ready --timeout 5m
+          sudo k8s bootstrap --file - <<EOF
+          containerd-base-dir: ${CONTAINERD_BASE_DIR}
+          cluster-config:
+            network:
+              enabled: true
+            dns:
+              enabled: true
+            gateway:
+              enabled: true
+            local-storage:
+              enabled: true
+          EOF
+          sudo k8s status --wait-ready
 
       - name: Your tests
         run: |
