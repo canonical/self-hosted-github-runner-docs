@@ -3,12 +3,12 @@
 # How can I avoid DockerHub rate limits?
 
 We might run into [DockerHub pull limits](https://docs.docker.com/docker-hub/download-rate-limit/) depending on the usage of the self-hosted runners. 
-Platform Engineering operates an own DockerHub Mirror in PS6, to avoid the rate-limit issue.
+Platform Engineering operates our own DockerHub Mirror in PS6, to avoid the rate-limit issue.
 We pre-configure Docker inside the runners to use the DockerHub cache.
 
 Also, for further customisations on your side (e.g. for MicroK8s or Canonical K8s),
 we print instructions in the "Setup runner step" for how to use the mirror, 
-basically using the `DOCKERHUB_MIRROR` environment variable 
+using the `DOCKERHUB_MIRROR` environment variable. 
 
 ## MicroK8s
 

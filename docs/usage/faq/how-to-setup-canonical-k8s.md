@@ -2,9 +2,9 @@
 
 # How can I set up Canonical Kubernetes in my workflow?
 
-## Option A - removing Docker and containerd (Recommended)
+## Option A - Remove Docker and containerd (Recommended)
 
-If Docker is not required in your workflow, uninstall `docker.io` and `containerd`
+If Docker is not required in your workflow, uninstall `docker.io` and `containerd`:
 
 ```bash
 sudo apt-get remove -y docker.io containerd
@@ -30,7 +30,7 @@ fi
 ```
 
 
-Finally, install and bootstrap Canonical Kubernetes
+Finally, install and bootstrap Canonical Kubernetes:
 
 ```bash
 sudo snap install k8s --classic --channel=1.34-classic/stable
@@ -98,7 +98,7 @@ EOF
 fi
 ```
 
-Then install Canonical Kubernetes and bootstrap using the aforementioned  `CONTAINERD_BASE_DIR`
+Then install Canonical Kubernetes and bootstrap using the aforementioned  `CONTAINERD_BASE_DIR`:
 
 ```bash
 sudo snap install k8s --classic --channel=1.34-classic/stable
