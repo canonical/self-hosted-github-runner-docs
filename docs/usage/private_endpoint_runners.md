@@ -206,9 +206,17 @@ In order to pass sensitive credentials to access your internal endpoints (e.g. O
 Refer to the official [GitHub secrets guide](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions).  
 Please note that GitHub workflow may leak secrets and the workflow should be manually confirmed that no secrets are leaked.
 
-## Repository rules
+## Security checks
 
-The private endpoint runners will disallow any external contributors from running the workflow. This means that any jobs submitted from a fork of an external contributor will be disallowed.
+The private endpoint runners will disallow any untrusted contributors from running the workflow. 
+This means that any jobs submitted from a fork will be disallowed if
+
+- it is a public repository and the author is not an OWNER, MEMBER or COLLABORATOR
+- it is a private repository and the author is not an OWNER, MEMBER, COLLABORATOR or CONTRIBUTOR
+
+Definitions of the associations can be found [here](https://docs.github.com/en/graphql/reference/enums).
+
+**Due to technical limitations, membership cannot be verified indirectly via group membership. Membership can only be verified by adding the user explicitly to the repository.**
 
 ## Do’s and don’ts
 
