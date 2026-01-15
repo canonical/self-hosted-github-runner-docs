@@ -311,10 +311,10 @@ exclude_patterns = [
 
 # Specifies a reST snippet to be appended to each .rst file
 
-rst_epilog = """
-.. include:: /reuse/links.txt
-.. include:: /reuse/substitutions.txt
-"""
+# rst_epilog = """
+# .. include:: /reuse/links.txt
+# .. include:: /reuse/substitutions.txt
+# """
 
 # Feedback button at the top; enabled by default
 #
