@@ -29,7 +29,7 @@ You can request runners by specifying architecture, base-image and flavor labels
 
 would give you a large runner with base jammy on amd64. Every runner also has a single label to identify, with the pattern _self-hosted-linux-\<arch\>-\<base\>-\<flavor\>_, so e.g. _self-hosted-linux-amd64-jammy-large_ for the large runner mentioned above.
 
-**We recommend using the single label, which provides precisely the runner you need.** **Otherwise, please ensure that you specify the runner as precisely as possible by specifying all labels, so e.g. \[x64, large, jammy\]. This is because we may spawn additional sizes, Ubuntu OS versions and architectures in the future and without being precise GitHub will choose the allocation of the runner to your job.**
+**We recommend using the single label, which provides precisely the runner you need.** **Otherwise, please ensure that you specify the runner as precisely as possible by specifying all labels, so e.g. \[self-hosted, linux, amd64, large, jammy\]. This is because we may spawn additional sizes, Ubuntu OS versions and architectures in the future and without being precise GitHub will choose the allocation of the runner to your job.**
 
 The following is a list of runners currently available:
 
