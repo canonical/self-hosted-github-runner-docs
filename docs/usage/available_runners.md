@@ -67,6 +67,7 @@ The following is a list of runners currently available:
 | arm64   | noble      | medium        | self-hosted-linux-arm64-noble-edge                          | edge              |
 | arm64   | noble      | medium        | self-hosted-linux-arm64-noble-medium-fips                   | fips              |
 | arm64   | noble      | large         | self-hosted-linux-arm64-noble-large                         |                   |
+| arm64   | noble      | large-extra   | self-hosted-linux-arm64-noble-large-extra                   |                   |
 | arm64   | noble      | xlarge        | self-hosted-linux-arm64-noble-xlarge                        |                   |
 | ppc64el | noble      | medium        | self-hosted-linux-ppc64el-noble-edge                        | edge              |
 | s390x   | noble      | medium        | self-hosted-linux-s390x-noble-edge                          | edge              |
