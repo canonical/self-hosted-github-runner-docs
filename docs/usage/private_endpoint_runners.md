@@ -206,9 +206,16 @@ In order to pass sensitive credentials to access your internal endpoints (e.g. O
 Refer to the official [GitHub secrets guide](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions).  
 Please note that GitHub workflow may leak secrets and the workflow should be manually confirmed that no secrets are leaked.
 
-## Repository rules
+## Security checks
 
-The private endpoint runners will disallow any external contributors from running the workflow. This means that any jobs submitted from a fork of an external contributor will be disallowed.
+The private endpoint runners will disallow any distrusted contributors from running the workflow. 
+This means that any jobs submitted from a **fork** will be disallowed if
+
+- it is a public repository and the author is not an `OWNER`, `MEMBER` or `COLLABORATOR`
+- it is a private repository and the author is not an `OWNER`, `MEMBER`, `COLLABORATOR` or `CONTRIBUTOR`
+
+Definitions of the associations can be found in [GitHub's documentation](https://docs.github.com/en/graphql/reference/enums#commentauthorassociation). Note that GitHub determines these values internally and the assignment is not always predictable — for example, an organisation member submitting a PR from a personal fork may receive `CONTRIBUTOR` instead of `MEMBER`.
+**Additionally, access granted via GitHub Teams is not recognised. If a legitimate user is unexpectedly blocked, adding them as a direct repository collaborator is the reliable workaround.**
 
 ## Do’s and don’ts
 
