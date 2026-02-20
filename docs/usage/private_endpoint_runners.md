@@ -211,12 +211,12 @@ Please note that GitHub workflow may leak secrets and the workflow should be man
 The private endpoint runners will disallow any untrusted contributors from running the workflow. 
 This means that any jobs submitted from a fork will be disallowed if
 
-- it is a public repository and the author is not an OWNER, MEMBER or COLLABORATOR
-- it is a private repository and the author is not an OWNER, MEMBER, COLLABORATOR or CONTRIBUTOR
+- it is a public repository and the author is not an `OWNER`, `MEMBER` or `COLLABORATOR`
+- it is a private repository and the author is not an `OWNER`, `MEMBER`, `COLLABORATOR` or `CONTRIBUTOR`
 
-Definitions of the associations can be found [here](https://docs.github.com/en/graphql/reference/enums).
+Definitions of the associations can be found [here](https://docs.github.com/en/graphql/reference/enums#commentauthorassociation). Note that GitHub determines these values internally and the assignment is not always predictable — for example, an organisation member submitting a PR from a personal fork may receive `CONTRIBUTOR` instead of `MEMBER`.
+**Additionally, access granted via GitHub Teams is not recognised. If a legitimate user is unexpectedly blocked, adding them as a direct repository collaborator is the reliable workaround.**
 
-**Due to technical limitations, membership cannot be verified indirectly via group membership. Membership can only be verified by adding the user explicitly to the repository.**
 
 ## Do’s and don’ts
 
