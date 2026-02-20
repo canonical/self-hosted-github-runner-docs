@@ -208,7 +208,7 @@ Please note that GitHub workflow may leak secrets and the workflow should be man
 
 ## Security checks
 
-The private endpoint runners will disallow any untrusted contributors from running the workflow. 
+The private endpoint runners will disallow any distrusted contributors from running the workflow. 
 This means that any jobs submitted from a **fork** will be disallowed if
 
 - it is a public repository and the author is not an `OWNER`, `MEMBER` or `COLLABORATOR`
