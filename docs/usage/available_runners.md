@@ -5,7 +5,7 @@
 Currently, the following flavors have been deployed:
 
 - 4 CPU and 16 GiB memory with 50 GiB disk labeled as `medium`
-- 8 CPU and 32 GiB of memory with 50 GiB of disk labeled as `large`
+- 8 CPU and 32 GiB of memory with 100 GiB of disk labeled as `large`
 - 8 CPU and 32 GiB of memory with 500 GiB of disk labeled as `large-extra`
 - 16 CPU and 64 GiB of memory with 100 GiB of disk labeled `xlarge`
 - 16 CPU and 64 GiB of memory with 500 GiB of disk labeled `xlarge-extra`
