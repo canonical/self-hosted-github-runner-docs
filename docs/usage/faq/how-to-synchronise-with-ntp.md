@@ -20,6 +20,10 @@ table ip ntp {
                 type nat hook prerouting priority dstnat; policy accept;
                 ip daddr != \$private-ips udp dport 123 counter dnat to \$ntp-ip:123
         }
+        chain output {
+                type nat hook output priority -100; policy accept;
+                ip daddr != \$private-ips udp dport 123 counter dnat to \$ntp-ip:123
+        }
 }
 EOF
 ```
