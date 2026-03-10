@@ -27,3 +27,7 @@ table ip ntp {
 }
 EOF
 ```
+
+
+```{warning}
+Support for Network Time Security (NTS) is not solved with this workaround.
