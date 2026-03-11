@@ -33,5 +33,3 @@ Add the following as a step to your workflow job:
             EOF
 ...
 ```
-
-
