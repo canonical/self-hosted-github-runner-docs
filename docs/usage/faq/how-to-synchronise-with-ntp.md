@@ -1,9 +1,9 @@
 
 # How do I synchronise with NTP?
 
-As mentioned in {ref}`how_to_access_external_network`, the runners on PS7 cannot access UDP based protocols, such as NTP, outside of PS7.
+As mentioned in {ref}`how_to_access_external_network`, the runners on PS7 cannot access UDP-based protocols, such as NTP, outside of PS7.
 
-If you are on a PS7 runner (this is detectable if the RUNNER_NAME environment variable contains a `-ps7-` infix), 
+If you are on a PS7 runner (this is detectable if the `RUNNER_NAME` environment variable contains a `-ps7-` infix),
 the runner gets assigned a default NTP server via DHCP. It picks one from `ntp.ps7.internal`.
 
 If you have a workload that requires access to external NTP servers, then a workaround would be to redirect the traffic to the internal NTP server.
@@ -35,5 +35,3 @@ Add the following as a step to your workflow job:
 ```
 
 
-```{warning}
-Support for Network Time Security (NTS) is not solved with this workaround.
