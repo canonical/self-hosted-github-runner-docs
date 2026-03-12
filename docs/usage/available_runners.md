@@ -56,7 +56,7 @@ The following is a list of runners currently available:
 | amd64   | noble      | medium        | self-hosted-linux-amd64-noble-pfe-ci                        | pfe-ci            |
 | amd64   | noble      | medium        | self-hosted-linux-amd64-noble-medium-fips                   | fips              |
 | amd64   | noble      | medium        | self-hosted-linux-amd64-noble-private-endpoint-medium       |                   |
-| amd64   | noble      | medium        | self-hosted-linux-amd64-noble-private-endpoint-xlarge-extra |                   |
+| amd64   | noble      | xlarge-extra  | self-hosted-linux-amd64-noble-private-endpoint-xlarge-extra |                   |
 | amd64   | noble      | medium        | self-hosted-linux-amd64-noble-tiobe                         | tiobe             |
 | amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-xlarge                        |                   |
 | amd64   | noble      | xlarge        | self-hosted-linux-amd64-noble-private-endpoint-xlarge       |                   |
